@@ -17,7 +17,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         <img
           src={product.images[0]}
           alt={`${product.title} image`}
-          className={` h-30 w-30 md:h-50 md:w-full rounded-[8px] transition-opacity duration-500`}
+          className={` h-40 w-40 md:h-50 md:w-full rounded-[8px] transition-opacity duration-500`}
           loading="lazy"
         />
       </div>

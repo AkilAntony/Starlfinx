@@ -16,7 +16,7 @@ const CartProductCard = ({
         <img
           src={productDetail.cartProduct.image}
           alt=""
-          className="min-h-30 w-30"
+          className="min-h-40 w-40"
         />
         <div className="flex flex-col   w-full">
           <p className="font-medium text-[14px] md:text-[18px]">

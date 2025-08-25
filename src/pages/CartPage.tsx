@@ -1,6 +1,5 @@
-import { MoveLeft } from "lucide-react";
+
 import { EmptyCart } from "../components/myCart/EmptyCart";
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../CartContext";
 import CartProductCard from "../components/myCart/CartProductCard";
@@ -9,17 +8,7 @@ export const CartPage = () => {
   const { cart, toalCartItems, totalCartAmount  } = useContext(CartContext);
   return (
     <div className="  relative">
-      {/* navigation to product page */}
-      {/* <Link to={"/"} className="">
-        <div
-          className="flex text-emerald-700 items-center
-         hover:bg-emerald-700 hover:text-white max-w-max p-2 px-4 
-         rounded-[8px] gap-2 cursor-pointer bg-white/60 "
-        >
-          <MoveLeft size={18} />
-          <p>Back to Products</p>
-        </div>
-      </Link> */}
+      
 
       <div className={`flex md:flex-row flex-col md:justify-between gap-5 ${toalCartItems > 0 && 'min-h-screen'} `}>
         <div className= {`${toalCartItems ? 'md:w-[70%]' : 'w-full'} `}>

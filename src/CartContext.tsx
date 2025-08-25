@@ -1,7 +1,5 @@
 import {
   createContext,
-  useCallback,
-  useEffect,
   useMemo,
   useState,
   type ReactNode,
@@ -35,7 +33,7 @@ export const CartContext = createContext<CartContextType>({
 
 const CartContextProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<ProductDetail[]>([]);
-  const [toalCartItems, setTotalCartItems] = useState(0);
+  
   
 
   const addToCart = (product: CartProduct) => {
@@ -92,24 +90,19 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
       return prev.filter((item) => item.cartProduct.id !== id);
     });
   };
+ 
 
-  const getCartItemsCount = () => {
-    let totalItems = 0;
-    cart.forEach((item) => {
-      totalItems += item.productCount;
-    });
-    return totalItems;
-  };
+const toalCartItems = useMemo(
+  () => cart.reduce((sum, item) => sum + item.productCount, 0),
+  [cart]
+);
 
 const totalCartAmount = useMemo(
   () => cart.reduce((sum, item) => sum + item.totalAmount, 0),
   [cart]
 );
  
-
-  useEffect(() => {
-    setTotalCartItems(getCartItemsCount());
-  }, [cart.map((item) =>item.productCount)]);
+ 
 
   return (
     <CartContext.Provider

@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 import { CartContext } from "../../CartContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import type { Product } from "../../schema/ProductRes";
 
 const ProductCard = ({ product }: { product: Product }) => {

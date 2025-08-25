@@ -36,7 +36,7 @@ export const CartPage = () => {
           <div className="md:top-18 bg-white border-gray-300 md:sticky 
           max-h-max border shadow-md px-3 py-2 rounded-[8px]
            flex  flex-col ">
-            <h2 className="md:text-[24px] text-emerald-700 font-bold ">Cart Summary</h2>
+            <h2 className="md:text-[24px] text-[18px]  text-emerald-700 font-bold ">Cart Summary</h2>
 
             <div className="flex flex-col gap-2">
               <div className="w-full flex justify-between ">
